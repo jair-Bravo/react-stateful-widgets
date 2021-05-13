@@ -12,6 +12,7 @@ Find comments below to help you along.
 */
 
 import React from 'react';
+import React, {useState} from "react";
 
 // Use this variable ONLY to initialize a slice of state!
 // There is something in the JSX right now breaking this rule...
@@ -35,6 +36,12 @@ export default function Programmers() {
     // The beauty of closures is that we can "see" both slices of state from this region
     // of the program, without needing to inject the information through arguments.
   };
+
+  const [programmers] = useState(listOfAwesome)
+
+  const [programmersID, setprogrammerID] = useState(null)
+
+  const getNameOfFeatured = () => programmers[programmerID - 1].name
 
   const style = {
     fontSize: '1.5em',
